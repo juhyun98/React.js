@@ -4,6 +4,7 @@ import './App.css';
 // 사용한 이름의 첫글자는 반드시 대문자로 작성!
 import Menubox from './Components/Menubox';
 import BaseCard from './Components/BaseCard';
+import CommentList from './Components/CommentList';
 
 /* 
    1.컴포넌트(Component)
@@ -56,12 +57,12 @@ function App() {
         <p>4000원</p>
       </div> */}
 
-      <BaseCard teamNm="KIA" player="강병우"/>
+      {/* <BaseCard teamNm="KIA" player="강병우"/>
       <BaseCard teamNm="SSG" player="김광현"/>
       <BaseCard teamNm="두산" player="김동주"/>
-      <BaseCard teamNm="한화" player="문동주"/>
-
-
+      <BaseCard teamNm="한화" player="문동주"/> */}
+      
+      <CommentList/>
     </div>
   );
 }
