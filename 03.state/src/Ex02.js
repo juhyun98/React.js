@@ -1,5 +1,5 @@
 import React from 'react'
-import Randnum from './components/Randnum';
+import {useState} from 'react'
 
 /* 
     실습 2) 랜덤 숫자 맞추는 페이지 구현
@@ -12,12 +12,30 @@ import Randnum from './components/Randnum';
 
 const Ex02 = () => {
 
-    const randomNum = Math.floor(Math.random() * 3 + 1);
-    console.log(randomNum);
+    const [userNum, setUserNum] = useState(0);
+    const [computerNum, setComputerNum] = useState(0);
+    const [result, setResult] = useState("");
 
     const handleNum = (event) => {
         // innerText : HTML 요소의 내용을 문자열로 가져오는 속성
+        const user = parseInt(event.target.innerText);
         console.log(event.target.innerText);
+
+        const computer = parseInt(Math.random() * 3) + 1;
+        console.log('랜덤숫자 : ', computer);
+
+        setUserNum(user);
+        setComputerNum(computer);
+
+        // if (user === computer) {
+        //      // 정답입니다~!
+        //      setResult("정답입니다~!");
+        // }else {
+        //      // 오답입니다~!
+        //      setResult("오답입니다..");
+        // }
+
+
     }
 
   return (
@@ -25,11 +43,10 @@ const Ex02 = () => {
         <button onClick={handleNum}>1</button>
         <button onClick={handleNum}>2</button>
         <button onClick={handleNum}>3</button>
-        <div>
-            <p>내가 입력한 숫자 : {}</p>
-            <p>랜덤한 숫자 : {randomNum}</p>
-            <Randnum/>
-        </div>
+        <p>내가 선택한 숫자 : {userNum}</p>
+        <p>생성된 숫자 : {computerNum}</p>
+        {/* <p>{result}</p> */}
+        { userNum === computerNum ? <p>정답입니다~!</p> : <p>오답입니다...</p> }
     </div>
   )
 }

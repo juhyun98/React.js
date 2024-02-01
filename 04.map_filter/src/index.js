@@ -3,15 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 
-// 실습1
-// import App from './Ex01';
-
-// 실습2
-// import App from './Ex02';
-
-// 실습3
-import App from './Ex03';
-
+// 실습 1
+import App from './Ex01';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
