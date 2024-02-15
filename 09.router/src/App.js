@@ -13,7 +13,7 @@ function App() {
 
     const [loginState, setLoginState] = useState(false);
 
-    // 로그인 상태를 체크하여 해당 컴포넌트를 반환하는 함수
+    // 로그인 상태를 체크하여 해당 컴포넌트를 실행하는 컴포넌트
     // 로그인한 상태(true) : <MyPage/>
     // 비로그인 상태(false) : <Login/>
     const PrivateRoute = () => {
@@ -34,15 +34,15 @@ function App() {
       <Route path='/product' element={<Product/>}/>
 
       {/* useParams()를 사용할 때 아래와 같이 URL에 변수명 설정 */}
-      <Route path='/product/:pro_no:/cate' element={<ProductDetail/>}/>
+      <Route path='/product/:pro_no/:cate' element={<ProductDetail/>}/>
 
       {/* useSearchParams()를 사용할 때는 경로만 설정 */}
       <Route path='/productDetail2' element={<ProductDetail2/>}/>
 
 
       {/* 
-        /mypage 요청이 들어왔을 때, PricateRoute에서 로그인 상태를 체크하고
-        그에 맞느 컴포넌트를 렌더링해주는 역할
+        /mypage 요청이 들어왔을 때, PrivateRoute에서 로그인 상태를 체크하고
+        그에 맞는 컴포넌트를 렌더링해주는 역할
       */}
       <Route path='/mypage' element={<PrivateRoute/>} />
       <Route path='/login' element={<Login setLoginState={setLoginState}/>} />
