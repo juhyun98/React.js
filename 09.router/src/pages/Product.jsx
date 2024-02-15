@@ -6,11 +6,13 @@ const Product = () => {
     const navigate = useNavigate()
 
     const goToProductDetail = () => {
-        navigate('/product/1')
+        // URL 파라미터 방식
+        navigate('/product/1/pants')
     }
 
     const goToProductDetail2 = () => {
-        navigate('/productDetail2?pro_no=1')
+        // 쿼리스트링 방식
+        navigate('/productDetail2?pro_no=1&cate=pants')
     }
 
   return (

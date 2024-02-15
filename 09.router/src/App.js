@@ -32,7 +32,11 @@ function App() {
 
       {/* Product 페이지로 이동하는 Route 컴포넌트 생성해보기! */}
       <Route path='/product' element={<Product/>}/>
-      <Route path='/product/:pro_no' element={<ProductDetail/>}/>
+
+      {/* useParams()를 사용할 때 아래와 같이 URL에 변수명 설정 */}
+      <Route path='/product/:pro_no:/cate' element={<ProductDetail/>}/>
+
+      {/* useSearchParams()를 사용할 때는 경로만 설정 */}
       <Route path='/productDetail2' element={<ProductDetail2/>}/>
 
 
